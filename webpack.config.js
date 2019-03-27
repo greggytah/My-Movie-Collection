@@ -1,14 +1,21 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/app.js',
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname + '/dist'),
         publicPath: '/',
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: './dist/index.html',
+        contentBase: './dist',
+        historyApiFallback: true,
+        proxy: {
+            '/**': {
+                target: 'http://localhost:8080',
+                secure: false,
+            },
+        }
     },
     module: {
         rules: [
@@ -16,7 +23,11 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
-            }
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
         ]
-    },
+    }
 };

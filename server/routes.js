@@ -1,8 +1,8 @@
 // Contains server routes for database actions
 
-const movies = require('.controllers/movieActions');
+const movies = require('./controllers/movieActions');
 
-module.exports = (server) => {
+module.exports = server => {
     server.get('/getMovies', movies.getAllMovies);
     server.post('/addMovie', movies.addMovie);
     server.get('/findMovie', movies.findMovie);

@@ -7,7 +7,7 @@ module.exports = {
     connection: {
       host: 'localhost',
       database: 'movie_collection',
-      user: 'postgres',
+      user: 'greggmoore',
       password: 'master'
     },
     pool: {
@@ -17,6 +17,9 @@ module.exports = {
     migrations: {
       tableName: 'knex_migrations',
       directory: './migrations',
+    },
+    seeds: {
+      directory: './seeds',
     }
   }
 
