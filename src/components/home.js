@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Jumbotron } from "react-bootstrap";
+import { Jumbotron, Button } from "react-bootstrap";
 
 class Home extends React.Component {
+
     render() {
         return (
-            <Jumbotron style={{textAlign: 'center'}}>
+            <Jumbotron className="text-center">
                 <h1>Welcome To My Movie Collection!</h1>
                 <p>
                     This contains a list of movies in my collection.
@@ -13,6 +14,9 @@ class Home extends React.Component {
                 <p>
                     <Link to="/movies">Movie List</Link>
                 </p>
+                <Button variant="primary" size="lg">
+                    <Link to="/addMovie" className="text-white">Add New Movie</Link>
+                </Button>
             </Jumbotron>
         )
     }

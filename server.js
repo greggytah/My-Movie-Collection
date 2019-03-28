@@ -1,9 +1,11 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 const app = express();
 app.use(express.static('dist'));
 const routes = require('./server/routes');
 
+app.use(bodyParser.json({ limit: '50mb' }));
 // Application routes
 routes(app);
 

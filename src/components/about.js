@@ -3,10 +3,10 @@ import React from 'react';
 class About extends React.Component {
     render() {
         return (
-            <div className="wrapper" style={{textAlign: 'center'}}>
+            <div className="wrapper text-center">
                 <h2>About My Movie Collection</h2>
                 <p>This app was built using the following tech stack: </p>
-                <ul style={{display: 'inline'}}>
+                <ul className="d-inline">
                     <li>React</li>
                     <li>Unstated</li>
                     <li>Bootstrap</li>

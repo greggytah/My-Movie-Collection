@@ -2,18 +2,21 @@ import { Container } from 'unstated';
 import axios from 'axios';
 
 export default class MoviesContainer extends Container {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
     }
 
-    fetchMovies() {
+    removeMovie(movie) {
+        const movieId = movie.id;
+
         return axios
-            .get('/getMovies')
-            .then(resp => {
-                return resp.data;
-            })
-            .catch(err =>
-                console.log('ERROR retrieving movies: ', err.message)
-            );
+            .delete(`/removeMovie/${movieId}`)
+                .then(response => {
+                    return response;
+                })
+                .catch(err => {
+                    console.log('ERROR removing movie: ', err.message)
+                })
     }
+
 }

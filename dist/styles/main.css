@@ -1,0 +1,20 @@
+/*
+App
+ */
+.homeLink {
+    padding-right: 1em;
+}
+
+/*
+Add Movie Page, Edit Movie Page
+ */
+.addMovie {
+    padding: 2em;
+}
+
+/*
+Search Movie Page
+ */
+.noPadding {
+    padding: 0;
+}

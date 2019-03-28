@@ -10,6 +10,7 @@ exports.up = function(knex, Promise) {
               table.string('genre');
               table.integer('year');
               table.string('rating');
+              table.unique(['title', 'year']) // movie title is unique per year
           }),
       ])
   )

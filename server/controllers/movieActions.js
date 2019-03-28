@@ -44,7 +44,7 @@ function getMovie(req, res) {
     const movieId = req.params.id;
 
     db('movies')
-        .where({id})
+        .where({id: movieId})
         .then((movie) => {
             res.status(201).send({
                 data: movie
@@ -58,10 +58,10 @@ function getMovie(req, res) {
 }
 
 function removeMovie(req, res) {
-    const movieId = req.params.id;
+    const id = req.params.movieId;
 
     db('movies')
-        .where({id})
+        .where({ id })
         .del()
         .then((response) => {
             res.status(200).send('Movie successfully deleted')
@@ -73,8 +73,8 @@ function removeMovie(req, res) {
 }
 
 function updateMovie(req, res) {
-    const movieId = req.params.id;
-    const movieData ={
+    const id = req.params.movieId;
+    const movieData = {
         title: req.body.title,
         genre: req.body.genre,
         year: req.body.year,
@@ -83,7 +83,7 @@ function updateMovie(req, res) {
     };
 
     db('movies')
-        .where({id})
+        .where({ id })
         .update({
             title: movieData.title,
             genre: movieData.genre,
