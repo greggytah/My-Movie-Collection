@@ -17,5 +17,3 @@ To start over and drop everything:
 
 To seed the database:  
 `knex seed:run`
-
-![marty-mcfly](https://cloud.githubusercontent.com/assets/499192/8718466/e58c679c-2ba4-11e5-8e3c-3f9955b810f7.jpg)
